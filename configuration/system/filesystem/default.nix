@@ -1,0 +1,68 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "ehci_pci"
+    "ahci"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
+    "sr_mod"
+    "rtsx_pci_sdmmc"
+  ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
+
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/e91ea696-cdf3-4ae7-936c-c232efd7852b";
+    fsType = "btrfs";
+    options = [ "subvol=@" ];
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/9CC5-9BD1";
+    fsType = "vfat";
+  };
+
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/fa3c1963-50bc-4049-a59a-5115ebd0ecba";
+    fsType = "xfs";
+  };
+
+  fileSystems."/data" = {
+    device = "/dev/disk/by-uuid/029271f6-c0a3-4af8-8f6b-2c5f00842690";
+    fsType = "btrfs";
+  };
+
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-uuid/3b9959aa-11a9-4e50-aa46-a8dbfb2be742";
+    fsType = "xfs";
+  };
+
+  fileSystems."/var" = {
+    device = "/dev/disk/by-uuid/9c42c8b5-78cc-4b1d-84af-475fc2b380f0";
+    fsType = "xfs";
+  };
+
+
+  swapDevices = [ ];
+
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp8s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp0s20u1.useDHCP = lib.mkDefault true;
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  #hardware.cpu.intel.updateMicrocode = true;
+}
