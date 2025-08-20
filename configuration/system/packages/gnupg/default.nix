@@ -1,11 +1,11 @@
-{ pkgs, unstable, ... }:
+{ pkgs, ... }:
 
 {
   environment = {
     variables = {
       GNUPGHOME = "/data/secrets/development/identities";
     };
-    systemPackages = [ unstable.lock ];
+    systemPackages = [ pkgs.lock ];
   };
   programs.gnupg = {
     agent = {

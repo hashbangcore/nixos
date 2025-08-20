@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    #nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.1.tar.gz";
@@ -12,21 +12,21 @@
   outputs =
     {
       nixpkgs,
-      nixpkgs-unstable,
+      #nixpkgs-unstable,
       lix-module,
       ...
     }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-      unstable = import nixpkgs-unstable { inherit system; };
+      #unstable = import nixpkgs-unstable { inherit system; };
       colorscheme = import ./configuration/colorscheme.nix;
     in
     {
       nixosConfigurations.master = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit unstable colorscheme;
+          inherit colorscheme;
         };
         modules = [
           ./configuration/system

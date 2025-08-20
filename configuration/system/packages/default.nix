@@ -1,6 +1,5 @@
 {
   pkgs,
-  unstable,
   config,
   lib,
   ...
@@ -120,11 +119,6 @@ let
       nap
       ytcc
       codesnap
-    ])
-    ++ (with unstable; [
-      #gemini-cli
-      nodejs_24
-      deno
     ]);
 
   games = with pkgs; [
