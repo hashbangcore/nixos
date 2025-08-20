@@ -7,7 +7,6 @@
 let
   essentials = with pkgs; [
     cmus
-    gnome-secrets
     vis
     just
     tmux
