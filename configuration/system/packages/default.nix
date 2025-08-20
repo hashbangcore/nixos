@@ -6,29 +6,30 @@
 }:
 let
   essentials = with pkgs; [
-    authenticator
-    blackbox-terminal
     cmus
     gnome-secrets
     vis
     just
     tmux
     alacritty
-    gnome-screenshot
+    tree
   ];
 
   graphical =
     (
       with pkgs;
       [
+        #gnome-screenshot
+        #blackbox-terminal
+        authenticator
         planify
         rnote
         gimp3-with-plugins
         emulsion-palette
         paleta
         amberol
-        pencil
-        keypunch
+        #pencil
+        #keypunch
         fractal
         varia
         warp
@@ -67,8 +68,8 @@ let
         multiplex
         paper-plane
         shortwave
-        tangram
-        celluloid
+        #tangram
+        #celluloid
         carburetor
         dconf-editor
       ]
@@ -106,19 +107,19 @@ let
       libva-utils
       gnumake
       mdcat
-      mesa-demos
+      #mesa-demos
       pciutils
       pdftk
-      pfetch-rs
+      #pfetch-rs
       pwgen
       translate-shell
       unp
       wget
-      xclip
+      #xclip
       yt-dlp
-      nap
-      ytcc
-      codesnap
+      #nap
+      #ytcc
+      #codesnap
     ]);
 
   games = with pkgs; [
@@ -135,14 +136,14 @@ let
 
   extensions = with pkgs.gnomeExtensions; [
     pip-on-top
-    ddterm
+    #ddterm
     gsconnect
     dash-to-dock
     places-status-indicator
-    gtk4-desktop-icons-ng-ding
+    #gtk4-desktop-icons-ng-ding
     clipboard-indicator
     copier
-    tiling-shell
+    #tiling-shell
   ];
 
   documentation = with pkgs; [
@@ -150,9 +151,9 @@ let
   ];
 
   libraries = with pkgs; [
-    gtk4
-    libadwaita
-    libinput
+    #gtk4
+    #libadwaita
+    #libinput
     gnome-themes-extra
   ];
 
@@ -179,7 +180,6 @@ let
         elastic
         gnome-builder
         cambalache
-        pencil
       ]
       ++ [
         zola
@@ -187,24 +187,24 @@ let
         #devenv
         #direnv
         flatpak-builder
-        gcc
-        git
-        gomplate
-        meson
-        ninja
-        nix-direnv
+        #gcc
+        #git
+        #gomplate
+        #meson
+        #ninja
+        #nix-direnv
         nixfmt-rfc-style
-        nixfmt-tree
+        #nixfmt-tree
         parallel
-        poetry
+        #poetry
         watchexec
-        yarn
+        #yarn
       ]
     )
     ++ (with pkgs.python312Packages; [
-      ipython
+      #ipython
       python
-      bpython
+      #bpython
     ]);
 
   playground = with pkgs; [
@@ -218,7 +218,7 @@ let
     #curtail
     #denaro
     #dialect
-    pods
+    #pods
     drawing
     #drive
     #dynamic-wallpaper
@@ -260,7 +260,7 @@ let
   pentesting = with pkgs; [
     #distrobox
     nmap
-    routersploit
+    #routersploit
     #metasploit
     #sqlmap
     #bettercap
@@ -303,9 +303,9 @@ in
 
     ./avahi
     ./bash
-    ./buku
+    #./buku
     ./firefox
-    ./firejail
+    #./firejail
     ./flatpak
     ./git
     ./gnupg
@@ -315,7 +315,7 @@ in
     ./openssh
     ./pass
     ./pipewire
-    ./thunderbird
+    #./thunderbird
     ./tmux
     ./unbound
     ./unclutter
@@ -324,18 +324,18 @@ in
 
   environment.gnome.excludePackages = bloatware;
   environment.systemPackages = builtins.concatLists [
-    system
-    libraries
+    #system
+    #libraries
     essentials
-    pentesting
+    #pentesting
   ];
   users.users."hash".packages = builtins.concatLists [
-    graphical
-    utilities
-    documentation
-    development
-    games
-    playground
+    #graphical
+    #utilities
+    #documentation
+    #development
+    #games
+    #playground
     extensions
   ];
 
