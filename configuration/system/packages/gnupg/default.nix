@@ -5,7 +5,6 @@
     variables = {
       GNUPGHOME = "/data/secrets/development/identities";
     };
-    systemPackages = [ pkgs.lock ];
   };
   programs.gnupg = {
     agent = {

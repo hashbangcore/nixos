@@ -67,7 +67,6 @@ in
       "vm.swappiness" = 10;
       "vm.vfs_cache_pressure" = 50;
     };
-
   };
 
   zramSwap.enable = true;
@@ -110,7 +109,6 @@ in
     networkmanager.dns = "none";
     firewall.enable = false;
   };
-
 
   system.stateVersion = "23.05";
 }

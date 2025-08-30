@@ -8,6 +8,16 @@ in
     "bash_completion.d/tmux-completion".source = ./completion.bash;
   };
 
+
+  environment.systemPackages = with pkgs; [
+    (writeShellApplication {
+      name = "work";
+      runtimeInputs = [ tmux ];
+      text = builtins.readFile ./script.sh;
+      meta.description = "Attach or create tmux session based on current directory";
+    })
+  ];
+
   programs.tmux = {
     enable = true;
     shortcut = "Space";
@@ -29,41 +39,40 @@ in
     ];
 
     extraConfig = ''
-      # General settings
       set-option -g default-shell /run/current-system/sw/bin/bash
-      #set -g mouse off
       set -g status on
       set -g renumber-windows on
-      #set-window-option -g mode-keys vi
       set -g display-time 3000
       set -g clock-mode-style 24
       set -g clock-mode-colour '${theme}'
 
-      # Color definitions (sintaxis compatible con tmux 3.5a)
+
       set -g mode-style "fg=${theme},bg=default"
-      set -g pane-border-style "fg=#3c3c3c"
-      set -g pane-active-border-style "fg=#AFAEAE"
+      set -g pane-border-style "fg=default"
+      set -g pane-active-border-style "fg=${theme}"
       set -g status-style "bg=default,fg=#AFAEAE"
       set -g window-status-style "fg=#AFAEAE,bg=default"
       set -g window-status-current-style "fg=${theme},bg=default"
       set -g message-style "bg=default,fg=${theme}"
 
-      # Status bar configuration
-      set -g status-justify right
+      set -g status-position bottom
       set -g status-right ""
-      set -g status-interval 5
-      set -g status-left-length 30
+      set -g status-left "[#S]"
+      set -g status-left-length 100
+      set -g status-right-length 100
 
-      # Key bindings
+
+      set -g window-status-separator ""
+      set -g status-justify right
+      set -g window-status-format "[#I]"
+      set -g window-status-current-format "[#I]"
+
       unbind i
       unbind r
       bind i set-option status
+      bind S set-option pane-border-status
+      bind-key '#' command-prompt -I "#{pane_title}" -p "(rename-pane):" "select-pane -T '%%'"
 
-      # Neovim compatibility
-      #set -g default-terminal "tmux-256color"
-      #set -ga terminal-overrides ",*256col*:RGB"
-      set -g set-titles on
-      set -g set-titles-string "#{pane_title}"
     '';
   };
 }

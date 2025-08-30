@@ -23,7 +23,10 @@
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/e91ea696-cdf3-4ae7-936c-c232efd7852b";
     fsType = "btrfs";
-    options = [ "subvol=@" ];
+    options = [
+      "subvol=@"
+      "noatime"
+    ];
   };
 
   fileSystems."/boot" = {
@@ -34,23 +37,59 @@
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/fa3c1963-50bc-4049-a59a-5115ebd0ecba";
     fsType = "xfs";
+    options = [
+      "noatime"
+    ];
   };
 
   fileSystems."/data" = {
     device = "/dev/disk/by-uuid/029271f6-c0a3-4af8-8f6b-2c5f00842690";
     fsType = "btrfs";
+    options = [
+      "compress=zstd:3"
+      "noatime"
+      "space_cache=v2"
+    ];
+
   };
 
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/3b9959aa-11a9-4e50-aa46-a8dbfb2be742";
     fsType = "xfs";
+    options = [
+      "noatime"
+    ];
   };
 
   fileSystems."/var" = {
     device = "/dev/disk/by-uuid/9c42c8b5-78cc-4b1d-84af-475fc2b380f0";
     fsType = "xfs";
+    options = [
+      "noatime"
+    ];
   };
 
+  fileSystems."/var/lib/flatpak" = {
+    device = "/dev/disk/by-uuid/a4268f53-1341-477f-b380-b5f5550085d9";
+    fsType = "btrfs";
+    options = [
+      "subvol=@apps"
+      "compress=zstd:3"
+      "noatime"
+      "space_cache=v2"
+    ];
+  };
+
+  fileSystems."/home/hash/.var" = {
+    device = "/dev/disk/by-uuid/a4268f53-1341-477f-b380-b5f5550085d9";
+    fsType = "btrfs";
+    options = [
+      "subvol=@data"
+      "compress=zstd:3"
+      "noatime"
+      "space_cache=v2"
+    ];
+  };
 
   swapDevices = [ ];
 

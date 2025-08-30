@@ -16,7 +16,7 @@ in
     withRuby = true;
     configure = {
       customRC = ''
-            set backupcopy=no
+            "set backupcopy=no
             set number
             set list
             "set listchars=tab:␉\ ,trail:⋅,nbsp:⍽
@@ -34,13 +34,14 @@ in
             set mouse=
             inoremap <C-l> <C-o>$
             inoremap <C-h> <C-o>^
-            nmap <space>e <Cmd>CocCommand explorer<CR>
-            "autocmd BufWritePre *.nix :silent !alejandra %
+            noremap <silent> <leader>e <Cmd>CocCommand explorer<CR>
+            noremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
+            "set shada='100
 
             if has("autocmd")
               autocmd BufReadPost *
               \ if line("'\'") > 0 && line("'\'") <= line("$") |
-              \ exe "normal g`\"" |
+              \ silent! exe "normal! g`\"" |
               \ endif
             endif
 
