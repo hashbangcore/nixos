@@ -1,12 +1,5 @@
-if [ "$#" -eq 0 ]; then
-    WRAPPER_SESSION=$(basename "$PWD")
-    INNER_SESSION="$(uuidgen)"
-else
-    WRAPPER_SESSION="$1"
-    INNER_SESSION="$1"
-fi
-
-
+WRAPPER_SESSION="${1:-$(basename "$PWD")}"
+INNER_SESSION="${1:-$(uuidgen)}"
 
 removeOrphaned(){
   for s in "/run/user/$(id -u)/tmux-$(id -u)"/*; do
@@ -45,11 +38,11 @@ startInner() {
 main() {
   removeOrphaned
 
-  if ! [[ -v TMUX ]]; then
+  if [[ -z ${TMUX-} ]]; then
     tmux -L default new-session -As default
 
   else
-    socket_name="$(basename "$(echo "$TMUX"| cut --delimiter="," --fields=1)")"
+    socket_name="$(basename "${TMUX%%,*}")"
 
     if [[ $socket_name == "default" ]]; then
       tmux -L default set-option prefix C-b
@@ -61,6 +54,4 @@ main() {
     fi
   fi
 }; main
-
-
 

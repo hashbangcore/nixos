@@ -1,5 +1,6 @@
 {
   neovim = "PaperColor";
-  vivid = "ayu";
+  #vivid = "ayu";
+  vivid = "lava";
   tmux = "#5F875F";
 }
