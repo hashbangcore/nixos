@@ -58,8 +58,9 @@ in
         start = [
           #coc-ultisnips
           #codesnap-nvim
+          #llm-nvim
           #nvchad
-          vim-colorschemes
+          #telescope-nvim
           coc-css
           coc-emmet
           coc-explorer
@@ -76,13 +77,13 @@ in
           coc-svelte
           coc-tsserver
           coc-yank
-          #llm-nvim
+          colorizer
           lush-nvim
           melange-nvim
           nerdcommenter
           ollama-nvim
           srcery-vim
-          #telescope-nvim
+          vim-colorschemes
           vim-just
           vim-nix
         ];
