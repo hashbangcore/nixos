@@ -1,0 +1,9 @@
+
+# build: flakes, derivations, build scripts
+# fix: bug fixes
+# package: install or remove packages
+# prune: cleanup configuration files
+# service: enable or disable services
+# system: core system changes
+# tweak: refinement changes
+
