@@ -38,6 +38,7 @@ let
     #xdotool
     cava
     coreutils-full
+    compsize
     ffmpeg-full
     file
     fzf
