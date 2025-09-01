@@ -2,6 +2,7 @@
 
 let
   packages = with pkgs; [
+    elvish
     nushell
     oils-for-unix
     xonsh
