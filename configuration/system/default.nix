@@ -30,6 +30,7 @@ in
 
     variables = {
       CDPATH = "/data";
+      BROWSER = "org.mozilla.firefox";
     };
   };
 
