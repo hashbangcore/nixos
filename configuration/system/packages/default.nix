@@ -52,6 +52,7 @@ let
     tree
     unp
     wget
+    wl-clipboard
     yt-dlp
   ];
 
