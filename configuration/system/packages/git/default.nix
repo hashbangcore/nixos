@@ -1,5 +1,7 @@
+{ pkgs, ... }:
 {
   environment = {
+    systemPackages = with pkgs; [ gh ];
     variables = {
       GIT_SSH_COMMAND = "ssh -F /data/secrets/development/credentials/config";
     };
