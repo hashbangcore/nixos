@@ -1,5 +1,15 @@
 { pkgs, ... }:
+
+let
+  packages = with pkgs; [
+    nushell
+  ];
+in
 {
+  environment = {
+    shells = packages;
+    systemPackages = packages;
+  };
   programs.bash = {
     promptInit = ''
       # Ignora comandos que comienzan con espacio
