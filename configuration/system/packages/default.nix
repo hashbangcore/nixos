@@ -44,6 +44,7 @@ let
     file
     fzf
     gocryptfs
+    lsof
     mdcat
     mpv
     nmap
