@@ -81,7 +81,7 @@ in
   imports = [
     ./scripts
     ./avahi
-    ./bash
+    ./shells
     ./buku
     #./firejail
     ./flatpak
