@@ -38,6 +38,7 @@ let
     #xdotool
     btrfs-progs
     cava
+    ccrypt
     compsize
     coreutils-full
     ffmpeg-full
