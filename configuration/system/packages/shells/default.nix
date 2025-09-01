@@ -4,6 +4,7 @@ let
   packages = with pkgs; [
     nushell
     oils-for-unix
+    xonsh
   ];
 in
 {
