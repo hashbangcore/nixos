@@ -36,9 +36,10 @@ let
     #tdrop
     #wmctrl
     #xdotool
+    btrfs-progs
     cava
-    coreutils-full
     compsize
+    coreutils-full
     ffmpeg-full
     file
     fzf
