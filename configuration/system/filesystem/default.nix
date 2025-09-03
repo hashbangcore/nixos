@@ -42,17 +42,6 @@
     ];
   };
 
-  fileSystems."/data" = {
-    device = "/dev/disk/by-uuid/029271f6-c0a3-4af8-8f6b-2c5f00842690";
-    fsType = "btrfs";
-    options = [
-      "compress=zstd:3"
-      "noatime"
-      "space_cache=v2"
-    ];
-
-  };
-
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/3b9959aa-11a9-4e50-aa46-a8dbfb2be742";
     fsType = "xfs";
@@ -91,6 +80,49 @@
     ];
   };
 
+  fileSystems."/home/hash/work" = {
+    device = "/dev/disk/by-uuid/029271f6-c0a3-4af8-8f6b-2c5f00842690";
+    fsType = "btrfs";
+    options = [
+      "subvol=@work"
+      "compress=zstd:3"
+      "noatime"
+      "space_cache=v2"
+    ];
+  };
+
+  fileSystems."/home/hash/multimedia" = {
+    device = "/dev/disk/by-uuid/029271f6-c0a3-4af8-8f6b-2c5f00842690";
+    fsType = "btrfs";
+    options = [
+      "subvol=@multimedia"
+      "compress=zstd:3"
+      "noatime"
+      "space_cache=v2"
+    ];
+  };
+
+  fileSystems."/home/hash/documents" = {
+    device = "/dev/disk/by-uuid/029271f6-c0a3-4af8-8f6b-2c5f00842690";
+    fsType = "btrfs";
+    options = [
+      "subvol=@documents"
+      "compress=zstd:3"
+      "noatime"
+      "space_cache=v2"
+    ];
+  };
+
+  fileSystems."/home/hash/secrets" = {
+    device = "/dev/disk/by-uuid/029271f6-c0a3-4af8-8f6b-2c5f00842690";
+    fsType = "btrfs";
+    options = [
+      "subvol=@secrets"
+      "compress=zstd:3"
+      "noatime"
+      "space_cache=v2"
+    ];
+  };
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
