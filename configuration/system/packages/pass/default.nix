@@ -3,7 +3,7 @@
 {
   environment = {
     variables = {
-      PASSWORD_STORE_DIR = "/data/secrets/development/store";
+      PASSWORD_STORE_DIR = "/home/hash/secrets/development/store";
     };
     systemPackages = [ pkgs.pass ];
   };

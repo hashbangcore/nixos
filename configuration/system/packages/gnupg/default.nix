@@ -3,7 +3,7 @@
 {
   environment = {
     variables = {
-      GNUPGHOME = "/data/secrets/development/identities";
+      GNUPGHOME = "/home/hash/secrets/development/identities";
     };
   };
   programs.gnupg = {

@@ -3,7 +3,7 @@
   environment = {
     systemPackages = with pkgs; [ gh ];
     variables = {
-      GIT_SSH_COMMAND = "ssh -F /data/secrets/development/credentials/config";
+      GIT_SSH_COMMAND = "ssh -F /home/hash/secrets/development/credentials/config";
     };
   };
   programs.git = {
