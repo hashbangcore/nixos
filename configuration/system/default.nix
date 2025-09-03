@@ -3,9 +3,6 @@
   pkgs,
   ...
 }:
-let
-  gemini = ''env NODE_OPTIONS=--dns-result-order=ipv4first GEMINI_API_KEY="$(pass google/gemini)" /data/workspace/repositories/gemini-cli/bundle/gemini.js '';
-in
 {
   imports = [
     ./desktop
@@ -16,16 +13,9 @@ in
   environment = {
     shellAliases = {
       cp = "cp --reflink=auto";
-      docs_commits = "mdt /data/library/documents/docs/convencional-commits.md";
-      docs_semver = "mdt /data/library/documents/docs/semver.md";
-      gemini-flash = ''${gemini} --model gemini-2.5-flash'';
-      gemini-lite = ''${gemini} --model gemini-2.5-flash-lite'';
-      gemini-pro = ''${gemini} --model gemini-2.5-pro'';
       l = "tree -L 1";
       ls = "LC_ALL=C ls --color=tty --indicator-style=slash";
-      music = "just -f /data/workspace/environment/scripts/music/justfile";
-      rm = "trash-put";
-      theme = "just -f /data/workspace/environment/scripts/theme/justfile";
+      rm = "gtrash put";
     };
 
     variables = {
