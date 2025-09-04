@@ -102,6 +102,16 @@
     ];
   };
 
+  fileSystems."/pkgs/goland" = {
+    device = "/dev/disk/by-uuid/a4268f53-1341-477f-b380-b5f5550085d9";
+    fsType = "btrfs";
+    options = [
+      "subvol=@goland"
+      "compress=zstd:3"
+      "noatime"
+      "space_cache=v2"
+    ];
+  };
 
   fileSystems."/home/hash/work" = {
     device = "/dev/disk/by-uuid/029271f6-c0a3-4af8-8f6b-2c5f00842690";
