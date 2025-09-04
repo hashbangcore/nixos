@@ -65,6 +65,7 @@ in
           coc-emmet
           coc-explorer
           coc-go
+          coc-go
           coc-html
           coc-json
           coc-markdownlint
