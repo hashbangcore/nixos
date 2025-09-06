@@ -3,6 +3,7 @@
 # fix: bug fixes
 # package: install or remove packages
 # prune: cleanup configuration files
+# remove: delete files or modules
 # service: enable or disable services
 # system: core system changes
 # tweak: refinement changes
