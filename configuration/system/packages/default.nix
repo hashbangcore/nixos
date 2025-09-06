@@ -83,7 +83,6 @@ in
     ./avahi
     ./shells
     ./buku
-    #./firejail
     ./flatpak
     ./git
     ./gnupg
