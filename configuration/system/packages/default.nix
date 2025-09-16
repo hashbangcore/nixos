@@ -81,7 +81,6 @@ in
   imports = [
     ./scripts
     ./avahi
-    ./shells
     ./buku
     ./flatpak
     ./git
@@ -92,6 +91,7 @@ in
     ./openssh
     ./pass
     ./pipewire
+    ./shells
     ./tmux
     ./unbound
     ./unclutter
