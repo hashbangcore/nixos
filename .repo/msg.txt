@@ -5,6 +5,7 @@
 # prune: cleanup configuration files
 # remove: delete files or modules
 # service: enable or disable services
+# style: formatting or ordering changes
 # system: core system changes
 # tweak: refinement changes
 
