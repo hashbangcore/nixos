@@ -29,7 +29,7 @@
           inherit colorscheme;
         };
         modules = [
-          ./configuration/system
+          ./configuration
           lix-module.nixosModules.default
         ];
       };
