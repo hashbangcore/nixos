@@ -5,7 +5,8 @@
 }:
 {
   imports = [
-    ./gnome.nix
+    ./gnome
+    ./sway
   ];
   services = {
     displayManager = {
