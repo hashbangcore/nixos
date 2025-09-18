@@ -39,7 +39,6 @@ let
     cava
     ccrypt
     compsize
-    coreutils-full
     ffmpeg-full
     file
     fzf
