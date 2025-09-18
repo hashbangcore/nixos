@@ -10,9 +10,6 @@ let
     tmux
   ];
 
-  formatter = with pkgs; [
-    shfmt
-  ];
   utilities = with pkgs; [
     sptlrx
     tealdeer
@@ -54,7 +51,6 @@ in
 
   environment.systemPackages = builtins.concatLists [
     essentials
-    formatter
     libraries
     utilities
   ];
