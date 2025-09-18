@@ -20,7 +20,6 @@ let
     shfmt
   ];
   utilities = with pkgs; [
-    pwgen
     sptlrx
     tealdeer
     translate-shell
