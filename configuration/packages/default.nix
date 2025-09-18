@@ -21,7 +21,6 @@ let
   ];
   utilities = with pkgs; [
     ffmpeg-full
-    lsof
     mdcat
     mpv
     nmap
