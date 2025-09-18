@@ -8,7 +8,6 @@ let
   essentials = with pkgs; [
     alacritty
     tmux
-    vis
   ];
 
   formatter = with pkgs; [
