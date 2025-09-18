@@ -21,7 +21,6 @@ let
   ];
   utilities = with pkgs; [
     ffmpeg-full
-    mpv
     nmap
     pwgen
     sptlrx
