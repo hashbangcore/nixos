@@ -20,7 +20,6 @@ let
     shfmt
   ];
   utilities = with pkgs; [
-    compsize
     ffmpeg-full
     file
     fzf
