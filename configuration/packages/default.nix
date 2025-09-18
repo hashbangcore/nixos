@@ -13,7 +13,6 @@ let
     vis
   ];
 
-
   formatter = with pkgs; [
     alejandra
     dprint
@@ -66,10 +65,6 @@ let
     hunspellDicts.es_CL
   ];
 
-  development = with pkgs; [
-    zola
-  ];
-
 in
 {
   imports = [
@@ -93,7 +88,6 @@ in
   ];
 
   environment.systemPackages = builtins.concatLists [
-    development
     essentials
     formatter
     libraries
