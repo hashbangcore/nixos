@@ -11,7 +11,6 @@ let
   ];
 
   utilities = with pkgs; [
-    tealdeer
     translate-shell
     tree
     unp
