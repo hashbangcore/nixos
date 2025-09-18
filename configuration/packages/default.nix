@@ -20,21 +20,6 @@ let
     shfmt
   ];
   utilities = with pkgs; [
-    #bat
-    #bind
-    #dotacat
-    #fping
-    #iw
-    #lexido
-    #libva-utils
-    #md-tui
-    #mkcert
-    #papeer
-    #pciutils
-    #pdftk
-    #tdrop
-    #wmctrl
-    #xdotool
     btrfs-progs
     ccrypt
     compsize
