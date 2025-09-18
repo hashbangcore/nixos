@@ -67,7 +67,6 @@ let
   ];
 
   development = with pkgs; [
-    gnumake
     jq
     just
     shellcheck
