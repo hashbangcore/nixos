@@ -67,7 +67,6 @@ let
   ];
 
   development = with pkgs; [
-    shellcheck
     zola
   ];
 
