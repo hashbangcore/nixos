@@ -21,7 +21,6 @@ let
   ];
   utilities = with pkgs; [
     ffmpeg-full
-    file
     fzf
     gocryptfs
     lsof
