@@ -70,7 +70,6 @@ let
     gnumake
     jq
     just
-    parallel
     shellcheck
     zola
   ];
