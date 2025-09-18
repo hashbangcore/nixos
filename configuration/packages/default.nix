@@ -11,7 +11,6 @@ let
   ];
 
   formatter = with pkgs; [
-    alejandra
     dprint
     nixfmt-rfc-style
     shfmt
