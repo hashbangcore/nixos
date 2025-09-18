@@ -11,7 +11,6 @@ let
   ];
 
   formatter = with pkgs; [
-    dprint
     nixfmt-rfc-style
     shfmt
   ];
