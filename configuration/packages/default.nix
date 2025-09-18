@@ -11,7 +11,6 @@ let
   ];
 
   formatter = with pkgs; [
-    nixfmt-rfc-style
     shfmt
   ];
   utilities = with pkgs; [
