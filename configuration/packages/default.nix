@@ -36,7 +36,6 @@ let
     #wmctrl
     #xdotool
     btrfs-progs
-    cava
     ccrypt
     compsize
     ffmpeg-full
