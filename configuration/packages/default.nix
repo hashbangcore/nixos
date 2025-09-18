@@ -11,7 +11,6 @@ let
   ];
 
   utilities = with pkgs; [
-    sptlrx
     tealdeer
     translate-shell
     tree
