@@ -20,7 +20,6 @@ let
     shfmt
   ];
   utilities = with pkgs; [
-    nmap
     pwgen
     sptlrx
     tealdeer
