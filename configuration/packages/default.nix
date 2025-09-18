@@ -10,10 +10,6 @@ let
     tmux
   ];
 
-  utilities = with pkgs; [
-    translate-shell
-  ];
-
   libraries = with pkgs; [
     hunspell
     hunspellDicts.en_US
@@ -45,7 +41,6 @@ in
   environment.systemPackages = builtins.concatLists [
     essentials
     libraries
-    utilities
   ];
 
 }
