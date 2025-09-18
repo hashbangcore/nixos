@@ -72,7 +72,6 @@ let
     just
     parallel
     shellcheck
-    watchexec
     zola
   ];
 
