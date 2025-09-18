@@ -67,7 +67,6 @@ let
   ];
 
   development = with pkgs; [
-    jq
     just
     shellcheck
     zola
