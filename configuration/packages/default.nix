@@ -20,7 +20,6 @@ let
     shfmt
   ];
   utilities = with pkgs; [
-    ccrypt
     compsize
     ffmpeg-full
     file
