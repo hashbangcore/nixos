@@ -16,7 +16,6 @@ let
     unp
     wget
     wl-clipboard
-    yt-dlp
   ];
 
   libraries = with pkgs; [
