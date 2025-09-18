@@ -20,7 +20,6 @@ let
     shfmt
   ];
   utilities = with pkgs; [
-    ffmpeg-full
     nmap
     pwgen
     sptlrx
