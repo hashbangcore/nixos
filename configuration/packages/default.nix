@@ -7,7 +7,6 @@
 let
   essentials = with pkgs; [
     alacritty
-    tmux
   ];
 
   libraries = with pkgs; [
