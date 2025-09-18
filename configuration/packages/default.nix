@@ -20,7 +20,6 @@ let
     shfmt
   ];
   utilities = with pkgs; [
-    btrfs-progs
     ccrypt
     compsize
     ffmpeg-full
