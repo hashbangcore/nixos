@@ -13,7 +13,6 @@ let
   utilities = with pkgs; [
     translate-shell
     tree
-    unp
     wget
   ];
 
