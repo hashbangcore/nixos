@@ -12,7 +12,6 @@ let
 
   utilities = with pkgs; [
     translate-shell
-    tree
     wget
   ];
 
