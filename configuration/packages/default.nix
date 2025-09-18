@@ -15,7 +15,6 @@ let
     tree
     unp
     wget
-    wl-clipboard
   ];
 
   libraries = with pkgs; [
