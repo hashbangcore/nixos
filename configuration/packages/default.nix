@@ -7,7 +7,6 @@
 let
   essentials = with pkgs; [
     alacritty
-    cmus
     tmux
     trash-cli
     vis
