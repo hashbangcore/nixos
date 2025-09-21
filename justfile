@@ -26,4 +26,7 @@ update:
     nix flake update
 
 clean:
-    rm -r ./result
+    nix store gc
+
+optimise:
+    nix store optimise
