@@ -6,6 +6,7 @@ let
     llm-gemini
     llm-gguf
     llm-git
+    llm-grok
     llm-jq
     llm-ollama
     llm-openrouter
