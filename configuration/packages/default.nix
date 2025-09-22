@@ -24,6 +24,7 @@ in
     ./flatpak
     ./git
     ./gnupg
+    ./llm
     ./logind
     ./neovim
     ./ollama
