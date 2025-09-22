@@ -12,6 +12,7 @@ let
     llm-jq
     llm-ollama
     llm-openrouter
+    llm-tools-sqlite
   ];
 in
 {
