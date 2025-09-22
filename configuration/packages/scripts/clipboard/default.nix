@@ -11,7 +11,7 @@ in
       name = "clip-copy";
       runtimeInputs = dependencies;
       text = ''
-        if [ -n "$WAYLAND_DISPLAY" ]; then
+        if [ -v WAYLAND_DISPLAY ]; then
           wl-copy
         else
           xclip -selection clipboard
@@ -24,7 +24,7 @@ in
       name = "clip-paste";
       runtimeInputs = dependencies;
       text = ''
-        if [ -n "$WAYLAND_DISPLAY" ]; then
+        if [ -v WAYLAND_DISPLAY ]; then
           wl-paste
         else
           xclip -o -selection clipboard
