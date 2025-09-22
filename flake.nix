@@ -5,6 +5,7 @@
   };
   outputs =
     {
+      self,
       nixpkgs,
       nixpkgs-unstable,
       ...
@@ -22,6 +23,14 @@
         };
         modules = [
           ./configuration
+          (
+            {
+              nix.registry.unstable.to = {
+                type = "path";
+                path = self.inputs.nixpkgs-unstable.outPath;
+              };
+            }
+          )
         ];
       };
     };
