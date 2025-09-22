@@ -1,0 +1,47 @@
+commit:
+  add_metadata: false
+
+prompts:
+  commit_message: |
+    {prompt[commit_message]}
+
+    == CONTEXT BLOCK ==
+    Generate high-quality, precise, and clear commit messages.
+    This is a NixOS configuration repository using flakes.
+    All output is in a terminal environment; do NOT add visual
+    decorations, boxes, ASCII art, or any styling.
+    Follow the CONVENTION BLOCK exactly. Focus only on the actual
+    changes made in the repository. Do not invent features, explanations,
+    or any content outside the scope of the changes. Output must be structured
+    exactly according to the defined format.
+    == END CONTEXT BLOCK ==
+
+    == EXAMPLE BLOCK ==
+    service: enable unbound
+
+    Add the unbound package to the system environment
+    and enable service on port 5353
+
+    == END  EXAMPLE BLOCK ==
+
+    == CONVENTION BLOCK ==
+    # build: flakes, derivations, build scripts
+    # fix: bug fixes
+    # package: install or remove packages
+    # prune: cleanup configuration files
+    # remove: delete files or modules
+    # service: enable or disable services
+    # style: formatting or ordering changes
+    # system: core system changes
+    # tweak: refinement changes
+    == END CONVENTION BLOCK ==
+
+    == OUTPUT FORMAT ==
+    - Follow EXAMPLE BLOCK
+    - Line 1: type: short description (must be ONE of the CONVENTION BLOCK)
+    - Line 2: MUST be blank
+    - Line 3+: detailed explanation of the changes. Wrap lines at 70 characters maximum,Break long sentences into multiple lines to respect the width.
+    - DO NOT use quotes, backticks, or extra symbols
+    - DO NOT add any extra text outside this format
+    - Always append the convention block content at the end of the commit, line by line, exactly as shown
+    == END OUTPUT FORMAT ==
