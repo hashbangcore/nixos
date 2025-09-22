@@ -3,6 +3,7 @@
 let
   plugins = with unstable.python3Packages; [
     llm-cmd
+    llm-docs
     llm-gemini
     llm-gguf
     llm-git
