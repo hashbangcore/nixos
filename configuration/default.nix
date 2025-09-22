@@ -23,16 +23,6 @@
     };
   };
 
-  nix = {
-    enable = true;
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-    };
-  };
-
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [

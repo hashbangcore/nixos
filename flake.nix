@@ -23,14 +23,21 @@
         };
         modules = [
           ./configuration
-          (
-            {
-              nix.registry.unstable.to = {
+          ({
+            nix = {
+              enable = true;
+              settings = {
+                experimental-features = [
+                  "nix-command"
+                  "flakes"
+                ];
+              };
+              registry.unstable.to = {
                 type = "path";
                 path = self.inputs.nixpkgs-unstable.outPath;
               };
-            }
-          )
+            };
+          })
         ];
       };
     };
