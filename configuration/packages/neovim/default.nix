@@ -19,18 +19,25 @@ let
     };
 
     model = {
+      agentica = "openrouter/agentica-org/deepcoder-14b-preview:free";
+      gemini-flash = "gemini/gemini-2.5-flash";
+      gemini-lite = "gemini/gemini-2.5-flash-lite";
+      gemini-pro = "gemini/gemini-2.5-pro";
       qwen2 = "openrouter/qwen/qwen-2.5-coder-32b-instruct:free";
       qwen3 = "openrouter/qwen/qwen3-coder:free";
-      agentica = "openrouter/agentica-org/deepcoder-14b-preview:free";
+
       set =
-        name: model: ''command! Select${name} lua require("sllm").setup({default_model = "${model}"})'';
+        name: model: ''command! SelectModel${name} lua require("sllm").setup({default_model = "${model}"})'';
     };
     config = ''
-      lua require("sllm").setup({ default_model = "${model.qwen2}" })
+      lua require("sllm").setup({ default_model = "${model.gemini-lite}" })
 
+      ${model.set "Agentica" model.agentica}
+      ${model.set "GeminiFlash" model.gemini-flash}
+      ${model.set "GeminiLite" model.gemini-lite}
+      ${model.set "GeminiPro" model.gemini-pro}
       ${model.set "Qwen2" model.qwen2}
       ${model.set "Qwen3" model.qwen3}
-      ${model.set "Agentica" model.agentica}
 
     '';
   };
