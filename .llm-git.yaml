@@ -25,15 +25,14 @@ prompts:
     == END  EXAMPLE BLOCK ==
 
     == CONVENTION BLOCK ==
-    # build: flakes, derivations, build scripts
+    # build: flakes, tasks, build scripts
     # fix: bug fixes
     # package: install or remove packages
     # prune: cleanup configuration files
-    # remove: delete files or modules
     # service: enable or disable services
     # style: formatting or ordering changes
     # system: core system changes
-    # tweak: refinement changes
+    # tweak: refinement changes in packages or services
     == END CONVENTION BLOCK ==
 
     == OUTPUT FORMAT ==
