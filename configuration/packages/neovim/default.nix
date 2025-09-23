@@ -26,8 +26,15 @@ let
       qwen2 = "openrouter/qwen/qwen-2.5-coder-32b-instruct:free";
       qwen3 = "openrouter/qwen/qwen3-coder:free";
 
-      set =
-        name: model: ''command! SelectModel${name} lua require("sllm").setup({default_model = "${model}"})'';
+      set = name: model: ''
+        function! SelectModel${name}()
+          lua require("sllm").setup({default_model = "${model}"})
+          echo "Select Model: ${name}"
+        endfunction
+
+        command! SelectModel${name} call SelectModel${name}()
+
+      '';
     };
     config = ''
       lua require("sllm").setup({ default_model = "${model.gemini-lite}" })
