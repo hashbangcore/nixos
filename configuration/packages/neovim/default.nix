@@ -5,6 +5,35 @@
 }:
 let
   theme = colorscheme.neovim;
+
+  sllm = rec {
+    plugin = pkgs.vimUtils.buildVimPlugin {
+      pname = "sllm";
+      version = "0.2.2";
+      src = pkgs.fetchFromGitHub {
+        owner = "mozanunal";
+        repo = "sllm.nvim";
+        rev = "v0.2.0";
+        sha256 = "0prlabhc6qxmfkz193r6lmh9kjvyfvrg4x3p0vgy1y5rq13k9mpy";
+      };
+    };
+
+    model = {
+      qwen2 = "openrouter/qwen/qwen-2.5-coder-32b-instruct:free";
+      qwen3 = "openrouter/qwen/qwen3-coder:free";
+      agentica = "openrouter/agentica-org/deepcoder-14b-preview:free";
+      set = name: model: ''command! Select${name} lua require("sllm").setup({default_model = "${model}"})'';
+    };
+    config = ''
+      lua require("sllm").setup({ default_model = "${model.qwen2}" })
+
+      ${model.set "Qwen2" model.qwen2}
+      ${model.set "Qwen3" model.qwen3}
+      ${model.set "Agentica" model.agentica}
+
+    '';
+  };
+
 in
 {
   programs.neovim = {
@@ -52,10 +81,14 @@ in
 
         " Confirmar con Enter
           inoremap <expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+          ${sllm.config}
       '';
 
       packages.myVimPackage = with pkgs.vimPlugins; {
         start = [
+          sllm.plugin
+        ]
+        ++ [
           #coc-ultisnips
           #codesnap-nvim
           #llm-nvim
