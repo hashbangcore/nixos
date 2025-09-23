@@ -32,7 +32,7 @@ prompts:
     # service: enable or disable services
     # style: formatting or ordering changes
     # system: core system changes
-    # tweak: refinement changes in packages or services
+    # tweak(package or service): refinement changes in packages or services
     == END CONVENTION BLOCK ==
 
     == OUTPUT FORMAT ==
