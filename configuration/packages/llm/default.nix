@@ -37,6 +37,7 @@ let
       llm-git
       llm-grok
       llm-jq
+      llm-mistral
       llm-ollama
       llm-openrouter
       llm-tools-sqlite
