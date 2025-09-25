@@ -7,6 +7,7 @@
 
   services.ollama = {
     enable = true;
+    port = 11434;
   };
 
   environment.systemPackages = with pkgs; [
