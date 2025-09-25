@@ -1,4 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, unstable, ... }:
+let
+  blueprint-compiler = unstable.callPackage ./blueprinter/package.nix { };
+  alpaca-local = unstable.callPackage ./alpaca/package.nix { };
+  alpaca-with-blueprint = alpaca-local.overrideAttrs (old: {
+    nativeBuildInputs = old.nativeBuildInputs ++ [ blueprint-compiler ];
+  });
+in
 {
 
   environment.etc = {
@@ -10,7 +17,8 @@
     port = 11434;
   };
 
-  environment.systemPackages = with pkgs; [
-    gollama
+  environment.systemPackages = [
+    pkgs.gollama
+    alpaca-with-blueprint
   ];
 }
