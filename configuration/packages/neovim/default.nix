@@ -45,14 +45,35 @@ let
       ${model.set "GeminiPro" model.gemini-pro}
       ${model.set "Qwen2" model.qwen2}
       ${model.set "Qwen3" model.qwen3}
-
     '';
   };
+
+  codestral = ''
+    lua <<EOF
+    local llm = require('llm')
+    llm.setup({
+      api_token = "zPNqH1IReAEfyR0IraCoRaIjGnYUfkH8",
+      model = "codestral-latest",
+      backend = "openai",
+      url = "https://codestral.mistral.ai/v1",
+      fim = {
+        enabled = true,
+      },
+      request_body = {
+        parameters = {
+          max_new_tokens = 60,
+          temperature = 0.2,
+          top_p = 0.95,
+        },
+      },
+    })
+    EOF
+  '';
 
   customRC = ''
     "set backupcopy=no
     set number
-    set list
+    set nolist
     "set listchars=tab:␉\ ,trail:⋅,nbsp:⍽
     "set listchars=tab:⭾\ ,trail:¤,nbsp:•
     set listchars=tab:›\ ,trail:·,nbsp:␣
@@ -94,7 +115,6 @@ let
       ++ [
         #coc-ultisnips
         #codesnap-nvim
-        #llm-nvim
         #nvchad
         #telescope-nvim
         coc-css
@@ -110,11 +130,12 @@ let
         coc-pyright
         coc-rls
         coc-sh
-        coc-spell-checker
+        #coc-spell-checker
         coc-svelte
         coc-tsserver
         coc-yank
         colorizer
+        llm-nvim
         lush-nvim
         melange-nvim
         nerdcommenter
@@ -140,4 +161,7 @@ in
       inherit customRC packages;
     };
   };
+  environment.systemPackages = with pkgs; [
+    llm-ls
+  ];
 }
