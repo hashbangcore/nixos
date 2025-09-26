@@ -15,6 +15,7 @@ in
   };
   programs.bash = {
     promptInit = ''
+      eval "$(direnv hook bash)"
       # Ignora comandos que comienzan con espacio
       HISTCONTROL=ignorespace
 
