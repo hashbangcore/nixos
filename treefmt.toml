@@ -1,0 +1,3 @@
+[formatter.mylanguage]
+command = "nixfmt"
+includes = [ "*.nix" ]

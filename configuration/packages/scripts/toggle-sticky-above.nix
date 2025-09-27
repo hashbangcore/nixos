@@ -1,7 +1,7 @@
 # works only on X11
 
-
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     (writeScriptBin "toggle-sticky-above" ''
       #!/usr/bin/env bash

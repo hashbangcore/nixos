@@ -6,7 +6,7 @@
     localControlSocketPath = "/run/unbound/unbound.ctl";
     settings = {
       server = {
-        interface = ["127.0.0.1@53"];
+        interface = [ "127.0.0.1@53" ];
         prefetch = true;
         cache-min-ttl = 3600;
       };
@@ -22,8 +22,8 @@
         forward-first = false;
       };
 
-      local-zone = [];
-      local-data = [];
+      local-zone = [ ];
+      local-data = [ ];
     };
   };
 }
