@@ -22,6 +22,9 @@ boot: (system "boot")
 
 switch: (system "switch")
 
+list:
+    nixos-rebuild list-generations
+
 update:
     nix flake update
 
