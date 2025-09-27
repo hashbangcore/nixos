@@ -36,6 +36,9 @@
                 type = "path";
                 path = self.inputs.nixpkgs-unstable.outPath;
               };
+              extraOptions = ''
+                flake-registry =   
+              '';
             };
           })
         ];
