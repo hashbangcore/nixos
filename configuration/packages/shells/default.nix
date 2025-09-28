@@ -9,13 +9,18 @@ let
   ];
 in
 {
+  imports = [
+    ./alias.nix
+    ./variables.nix
+  ];
+
   environment = {
     shells = packages;
     systemPackages = packages;
   };
+
   programs.bash = {
     promptInit = ''
-      eval "$(direnv hook bash)"
       # Ignora comandos que comienzan con espacio
       HISTCONTROL=ignorespace
 
@@ -46,12 +51,11 @@ in
       # Autocompletado que ignora mayúsculas/minúsculas
       bind 'set completion-ignore-case on'
 
-
-
       if [ "$(id -u)" -eq 0 ]; then
         PS1='\[\e[31m\]#!  \[\e[0m\]'
       else
         PS1='#!  '
+        eval "$(direnv hook bash)"
       fi
 
     '';

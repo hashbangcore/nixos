@@ -10,19 +10,6 @@
     ./packages
   ];
 
-  environment = {
-    shellAliases = {
-      cp = "cp --reflink=auto";
-      l = "tree -L 1";
-      ls = "LC_ALL=C ls --color=tty --indicator-style=slash";
-      rm = "gtrash put";
-    };
-
-    variables = {
-      BROWSER = "org.mozilla.firefox";
-    };
-  };
-
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
