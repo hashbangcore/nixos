@@ -32,12 +32,19 @@
                   "flakes"
                 ];
               };
-              registry.unstable.to = {
-                type = "path";
-                path = self.inputs.nixpkgs-unstable.outPath;
+              registry = {
+                unstable.to = {
+                  type = "path";
+                  path = self.inputs.nixpkgs-unstable.outPath;
+                };
+                templates.to = {
+                  owner = "NixOS";
+                  repo = "templates";
+                  type = "github";
+                };
               };
               extraOptions = ''
-                flake-registry =   
+                flake-registry = 
               '';
             };
           })
