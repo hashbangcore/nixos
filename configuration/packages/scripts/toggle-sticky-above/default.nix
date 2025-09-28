@@ -1,5 +1,3 @@
-# works only on X11
-
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
