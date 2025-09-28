@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-  environment = {
-    systemPackages = [ pkgs.tts ];
-  };
-
   services.tts.servers = {
     default = {
       enable = true;
