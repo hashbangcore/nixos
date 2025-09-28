@@ -13,7 +13,7 @@
     let
       system = "x86_64-linux";
       unstable = import nixpkgs-unstable { inherit system; };
-      colorscheme = import ./configuration/colorscheme.nix;
+      colorscheme = import ./settings/colorscheme.nix;
     in
     {
       nixosConfigurations.master = nixpkgs.lib.nixosSystem {
@@ -22,7 +22,7 @@
           inherit colorscheme unstable;
         };
         modules = [
-          ./configuration
+          ./system
           ({
             nix = {
               enable = true;
