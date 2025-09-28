@@ -10,24 +10,30 @@ fi
 CONVENTION="$(cat .repo/msg.txt)"
 
 PROMPT=$(cat <<EOF
-You are an expert programmer who writes concise and conventional commit messages.
+You are an expert programmer who writes concise commit messages.
 Your task is to generate a commit message for the following staged changes.
 
--- The commit message MUST follow this skeleton --
-<type>: <description>
+Follow **exactly** the custom commit convention provided below.
+
+== SKELETON ==
+<type>: <short description>
 <blank line>
-<longer description explaining what changed and why>
--- end skeleton --
+<longer description explaining what changed and why,
+wrapped at roughly 72 characters per line>
+== END SKELETON ==
 
--- convention (Here are the allowed types and their meanings) --
+== PROJECT COMMIT CONVENTION ==
 ${CONVENTION}
--- end convention --
+== END PROJECT COMMIT CONVENTION ==
 
--- git diff (Here are the staged changes) --
+== STAGED CHANGES (git diff) ==
 ${DIFF}
--- end git diff --
+== END STAGED CHANGES ==
+
+Generate ONLY the commit message text that follows the skeleton and the project convention.
+Break into multiple lines of around 50 characters each.
+Do not add explanations, markdown, or extra commentary.
 EOF
 )
 
 echo "$PROMPT" | rave ""
-

@@ -1,11 +1,7 @@
-
-# build: flakes, derivations, build scripts
+# build: changes in scripts, flakes and justfile
 # fix: bug fixes
 # package: install or remove packages
-# prune: cleanup configuration files
+# prune: cleanup of configuration or formatting files
 # remove: delete files or modules
 # service: enable or disable services
-# style: formatting or ordering changes
-# system: core system changes
-# tweak: refinement changes
-
+# tweak: refinement of packages or services

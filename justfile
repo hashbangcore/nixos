@@ -36,7 +36,7 @@ optimise:
 
 commit:
     #!/usr/bin/env bash
-    set -euxo pipefail
+    set -euo pipefail #-x
     COUNT=$(printf "%02d" $(($(ls .repo/commits/ | wc -l) + 1)))
     COMMIT=$(mktemp ".repo/commits/${COUNT}-commit-XXXXXX.txt")
     ./scripts/commit.sh > "$COMMIT" || { rm -rf "$COMMIT"; exit 1; }
