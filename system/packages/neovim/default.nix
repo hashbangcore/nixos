@@ -130,7 +130,7 @@ let
         coc-pyright
         coc-rls
         coc-sh
-        #coc-spell-checker
+        coc-spell-checker
         coc-svelte
         coc-tsserver
         coc-yank
