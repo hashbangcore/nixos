@@ -19,6 +19,7 @@
       copier
       dash-to-dock
       gsconnect
+      notification-timeout
       pip-on-top
       places-status-indicator
       quake-terminal
