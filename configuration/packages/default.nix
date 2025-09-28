@@ -33,6 +33,7 @@ in
     ./pipewire
     ./shells
     ./tmux
+    ./tts
     ./unbound
     ./unclutter
     ./vivid
