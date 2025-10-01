@@ -93,6 +93,8 @@ let
     noremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
     "set shada='100
 
+    command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+
     if has("autocmd")
       autocmd BufReadPost *
       \ if line("'\'") > 0 && line("'\'") <= line("$") |
@@ -127,6 +129,7 @@ let
         coc-markdownlint
         coc-nvim
         coc-pairs
+        coc-prettier
         coc-pyright
         coc-rls
         coc-sh
