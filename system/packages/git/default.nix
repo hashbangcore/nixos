@@ -35,6 +35,7 @@
       };
       commit = {
         gpgsign = true;
+        template = "/home/hash/work/scaffold/convencional-commits/en.txt";
       };
     };
   };
