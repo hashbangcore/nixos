@@ -102,6 +102,17 @@
     ];
   };
 
+  fileSystems."/pkgs/rust" = {
+    device = "/dev/disk/by-uuid/a4268f53-1341-477f-b380-b5f5550085d9";
+    fsType = "btrfs";
+    options = [
+      "subvol=@rust"
+      "compress=zstd:3"
+      "noatime"
+      "space_cache=v2"
+    ];
+  };
+
   fileSystems."/pkgs/goland" = {
     device = "/dev/disk/by-uuid/a4268f53-1341-477f-b380-b5f5550085d9";
     fsType = "btrfs";
