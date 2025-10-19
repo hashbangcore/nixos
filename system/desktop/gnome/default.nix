@@ -32,7 +32,7 @@
     epiphany
     #evince
     #file-roller
-    geary
+    #geary
     #gnome-calculator
     #gnome-calendar
     #gnome-characters
