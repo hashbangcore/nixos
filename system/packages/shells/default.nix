@@ -1,12 +1,18 @@
 { pkgs, ... }:
-
 let
-  packages = with pkgs; [
+  shells = with pkgs; [
     elvish
     nushell
     oils-for-unix
     xonsh
   ];
+
+  systemPackages =
+    with pkgs;
+    [
+      aliae
+    ]
+    ++ shells;
 in
 {
   imports = [
@@ -15,8 +21,7 @@ in
   ];
 
   environment = {
-    shells = packages;
-    systemPackages = packages;
+    inherit shells systemPackages;
   };
 
   programs.bash = {
@@ -56,6 +61,7 @@ in
       else
         PS1='#!  '
         eval "$(direnv hook bash)"
+        eval "$(aliae init bash)"
       fi
 
     '';
