@@ -27,6 +27,7 @@ in
     ./llm
     ./logind
     ./neovim
+    ./obs
     ./ollama
     ./openssh
     ./pass
