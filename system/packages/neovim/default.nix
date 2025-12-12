@@ -131,7 +131,7 @@ let
         coc-pairs
         coc-prettier
         coc-pyright
-        coc-rls
+        coc-rust-analyzer
         coc-sh
         coc-spell-checker
         coc-svelte
