@@ -8,7 +8,6 @@
       droidcam-obs
       obs-gstreamer
       obs-pipewire-audio-capture
-      obs-webkitgtk
     ];
   };
 }
