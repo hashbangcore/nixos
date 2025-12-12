@@ -10,15 +10,6 @@
     ./packages
   ];
 
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      vaapiIntel
-      libva
-    ];
-    extraPackages32 = with pkgs; [ vaapiIntel ];
-  };
-
   boot = {
     loader = {
       systemd-boot.enable = true;
