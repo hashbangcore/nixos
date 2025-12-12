@@ -17,10 +17,5 @@
 
     # Permite que los procesos del usuario sigan ejecutándose tras cerrar sesión
     killUserProcesses = false;
-
-    # Configuración adicional para logind.conf (opcional)
-    extraConfig = ''
-      # Aquí puedes añadir líneas personalizadas si las necesitas
-    '';
   };
 }
