@@ -34,11 +34,11 @@ clean:
 optimise:
     nix store optimise
 
-commit:
+commit hint="":
     #!/usr/bin/env bash
     set -euo pipefail #-x
     COUNT=$(printf "%02d" $(($(ls .repo/commits/ | wc -l) + 1)))
     COMMIT=$(mktemp ".repo/commits/${COUNT}-commit-XXXXXX.txt")
-    ./scripts/commit.sh > "$COMMIT" || { rm -rf "$COMMIT"; exit 1; }
+    ./scripts/commit.sh {{ hint }} > "$COMMIT" || { rm -rf "$COMMIT"; exit 1; }
     cat ./.repo/msg.txt >> "$COMMIT"
     git commit -e -F "$COMMIT"

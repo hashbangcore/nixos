@@ -9,6 +9,16 @@ fi
 
 CONVENTION="$(cat .repo/msg.txt)"
 
+if [ -n "$*" ]; then
+    USER_HINT="
+== USER HINT ==
+$*
+== END USER HINT ==
+"
+  else
+    USER_HINT=""
+fi
+
 PROMPT=$(cat <<EOF
 You are an expert programmer who writes concise commit messages.
 Your task is to generate a commit message for the following staged changes.
@@ -30,10 +40,16 @@ ${CONVENTION}
 ${DIFF}
 == END STAGED CHANGES ==
 
+${USER_HINT}
+
+== PROJECT CONTEXT ==
+This is a personal NixOS configuration repository managed with flakes.
+== END PROJECT CONTEXT ==
+
 Generate ONLY the commit message text that follows the skeleton and the project convention.
 Break into multiple lines of around 50 characters each.
 Do not add explanations, markdown, or extra commentary.
 EOF
 )
 
-echo "$PROMPT" | rave ""
+rave "$PROMPT" 
