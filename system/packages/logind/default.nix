@@ -1,21 +1,21 @@
 {
-  services.logind = {
+  services.logind.settings.Login = {
     # Acción al presionar brevemente el botón de encendido
-    powerKey = "ignore";
+    HandlePowerKey = "ignore";
 
     # Acción al mantener presionado el botón de encendido
-    powerKeyLongPress = "poweroff";
+    HandlePowerKeyLongPress = "poweroff";
 
     # Acción al cerrar la tapa del portátil
-    lidSwitch = "ignore";
+    HandleLidSwitch = "ignore";
 
     # Acción al cerrar la tapa si hay un monitor externo conectado
-    lidSwitchExternalPower = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
 
     # Acción al cerrar la tapa si el equipo está "acoplado" (dock station, etc.)
-    lidSwitchDocked = "ignore";
+    HandleLidSwitchDocked = "ignore";
 
     # Permite que los procesos del usuario sigan ejecutándose tras cerrar sesión
-    killUserProcesses = false;
+    KillUserProcesses = false;
   };
 }

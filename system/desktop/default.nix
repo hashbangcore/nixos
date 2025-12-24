@@ -12,6 +12,11 @@
     displayManager = {
       autoLogin.enable = false;
       autoLogin.user = "hash";
+      gdm = {
+        wayland = true;
+        enable = true;
+        autoSuspend = false;
+      };
     };
     xserver = {
       enable = true;
@@ -21,13 +26,6 @@
         options = "compose:rctrl";
       };
       videoDrivers = [ "intel" ];
-      displayManager = {
-        gdm = {
-          wayland = true;
-          enable = true;
-          autoSuspend = false;
-        };
-      };
     };
   };
 }
