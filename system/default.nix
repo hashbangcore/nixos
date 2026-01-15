@@ -67,6 +67,4 @@
     networkmanager.dns = "none";
     firewall.enable = false;
   };
-
-  system.stateVersion = "23.05";
 }

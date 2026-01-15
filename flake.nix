@@ -24,6 +24,8 @@
         modules = [
           ./system
           ({
+            system.stateVersion = "23.05";
+
             nix = {
               enable = true;
               settings = {
