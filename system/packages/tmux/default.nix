@@ -37,9 +37,9 @@ let
     set -g status-right                  ""
     set -g status-style                  "fg=${c.font},bg=default"
     set -g window-status-current-format  "#[fg=${c.font}][#[fg=${c.acent}]#I#[fg=${c.font}]]"
-    set -g window-status-current-style   "fg=${c.acent},bg=${c.background}"
+    set -g window-status-current-style   "fg=${c.acent},bg=default"
     set -g window-status-format          "[#I]"
-    set -g window-status-style           "fg=${c.font},bg=${c.background}"
+    set -g window-status-style           "fg=${c.font},bg=default"
 
 
     #bind-key s choose-tree -s -F '#{?session_attached,#[fg=green]#[bg=red],#[fg=green]#[bg=red]} #{session_name}: #{session_windows}#{?session_attached, (attached),}'
