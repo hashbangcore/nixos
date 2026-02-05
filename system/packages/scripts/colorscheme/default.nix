@@ -8,6 +8,28 @@
 
         THEME="$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")"
 
+
+        function tmux_toggle(){
+          DARK="#1c1c1c"
+          WHITE="#eeeeee"
+          socket_dir="/run/user/$(id -u)/tmux-$(id -u)"
+
+
+          if [[ "$1" == "default" ]]; then
+            for socket in "$socket_dir"/*; do
+              socket="$(basename "$socket")"
+              tmux -L "$socket" set-option -g pane-active-border-style fg="$DARK"
+              tmux -L "$socket" set-option -g pane-border-style fg="$DARK"
+            done
+          elif [[ "$1" == "prefer-dark" ]]; then
+            for socket in "$socket_dir"/*; do
+              socket="$(basename "$socket")"
+              tmux -L "$socket" set-option -g pane-active-border-style fg="$WHITE"
+              tmux -L "$socket" set-option -g pane-border-style fg="$WHITE"
+            done
+          fi
+        }; tmux_toggle "$THEME"
+
         if [[ "$THEME" == "prefer-dark" ]]; then 
           gsettings set org.gnome.desktop.interface color-scheme 'default'
           gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
